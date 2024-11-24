@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/screens/create_qr_screen.dart';
+import 'package:qr_code_scanner/screens/scan_qr_screen.dart';
 
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});
@@ -38,6 +39,7 @@ class HomeLayout extends StatelessWidget {
             Container(
               width: 140,
               child: MaterialButton(onPressed: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ScanQrScreen()));
                 print('Scan buttom presesed');
               },
                 child: Text('Scan QR Code',

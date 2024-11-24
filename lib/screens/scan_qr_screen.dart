@@ -15,7 +15,7 @@ class _ScanQrScreenState extends State<ScanQrScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Your QR',),
+        title: Text('Scan QR',),
       ),
       body: Center(
         child: Padding(
@@ -29,9 +29,15 @@ class _ScanQrScreenState extends State<ScanQrScreen> {
                 fontSize: 30,
               ),
               ),
-              ElevatedButton(
-                  onPressed: (){},
-                child: Text('Scan Now',),
+              MaterialButton(
+                  onPressed: (){
+                    scanQr();
+                  },
+                child: Text('Scan Now',
+                style: TextStyle(
+                  color: Colors.white,
+                ),),
+                color: Colors.deepPurple,
               )
             ],
           ),
@@ -41,9 +47,9 @@ class _ScanQrScreenState extends State<ScanQrScreen> {
   }
   Future<void> scanQr() async{
     try{
-      FlutterBarcodeScanner.scanBarcode('2A99CF', 'cancel', true, ScanMode.QR).then((valur){
+      FlutterBarcodeScanner.scanBarcode('2A99CF', 'cancel', true, ScanMode.QR).then((value){
         setState(() {
-
+          qrStr=value;
         });
       });
 
