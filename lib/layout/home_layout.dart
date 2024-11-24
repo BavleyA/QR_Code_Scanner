@@ -14,6 +14,40 @@ class HomeLayout extends StatelessWidget {
           ),
         ),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: 140,
+              child: MaterialButton(onPressed: (){
+                print('create buttom pressed');
+              },
+                  child: Text(
+                      'Create QR Code',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                color: Colors.deepPurple,
+              ),
+            ),
+            Container(
+              width: 140,
+              child: MaterialButton(onPressed: (){
+                print('Scan buttom presesed');
+              },
+                child: Text('Scan QR Code',
+                style: TextStyle(
+                  color: Colors.white,
+                ),),
+                color: Colors.deepPurple,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
